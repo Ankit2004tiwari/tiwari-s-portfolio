@@ -1,0 +1,127 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --color-primary: 94 55 46;
+  --color-primary-light: 228 225 216;
+  --color-secondary: 190 175 150;
+  --color-accent: 218 181 104;
+  --color-muted-blue: 120 140 160;
+  --color-background: 245 243 239;
+  --color-foreground: 44 44 44;
+  --color-card: 255 255 255;
+  --color-muted: 180 170 160;
+}
+
+.dark {
+  --color-primary: 208 205 206;
+  --color-primary-light: 66 66 66;
+  --color-secondary: 120 140 160;
+  --color-accent: 218 181 104;
+  --color-muted-blue: 190 175 150;
+  --color-background: 44 44 44;
+  --color-foreground: 228 225 216;
+  --color-card: 60 60 60;
+  --color-muted: 120 140 160;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[rgb(var(--color-background))] text-[rgb(var(--color-foreground))];
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  section {
+    @apply py-16 md:py-20;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-[rgb(var(--color-primary))] text-[rgb(var(--color-background))] hover:bg-[rgb(var(--color-primary-light))] focus:ring-[rgb(var(--color-primary))] dark:text-[rgb(var(--color-background))] dark:hover:text-[rgb(var(--color-background))];
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-[rgb(var(--color-primary))] text-[rgb(var(--color-primary))] hover:bg-[rgb(var(--color-primary))/0.1] focus:ring-[rgb(var(--color-primary))] dark:border-[rgb(var(--color-primary))] dark:text-[rgb(var(--color-primary))] dark:hover:bg-[rgb(var(--color-primary))/0.1];
+  }
+
+  .section-title {
+    @apply relative mb-12 pb-4 text-3xl font-bold after:absolute after:bottom-0 after:left-0 after:h-1 after:w-24 after:rounded-full after:bg-[rgb(var(--color-primary))];
+  }
+
+  .progress-bar {
+    @apply fixed top-0 left-0 h-1 bg-[rgb(var(--color-primary))] z-50;
+  }
+
+  .card {
+    @apply p-6 rounded-xl bg-[rgb(var(--color-card))] shadow-md hover:shadow-lg;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 text-base font-medium hover:text-[rgb(var(--color-primary))];
+  }
+
+  .nav-link.active {
+    @apply text-[rgb(var(--color-primary))];
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: rgb(var(--color-background));
+  }
+  
+  .bg-card {
+    background-color: rgb(var(--color-card));
+  }
+  
+  .text-foreground {
+    color: rgb(var(--color-foreground));
+  }
+  
+  .text-muted {
+    color: rgb(var(--color-muted));
+  }
+  
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+  
+  .bg-primary-light {
+    background-color: rgb(var(--color-primary-light));
+  }
+  
+  .text-primary {
+    color: rgb(var(--color-primary));
+  }
+}
