@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
-import { useTheme } from '../../context/ThemeContext';
-import resume from '../../assets/Ankittiwari_Resume.pdf';
-import Symbol from '../../assets/Portfolio_Icon.png';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Download } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+import resume from "../../assets/Ankittiwari_Resume.pdf";
+import Symbol from "../../assets/Portfolio_Icon.png";
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -11,54 +10,65 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme } = useTheme();
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'achievements', label: 'Achievements' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' }
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "achievements", label: "Achievements" },
+    { id: "certifications", label: "Certifications" },
+    { id: "contact", label: "Contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
+      const sections = document.querySelectorAll("section");
       const scrollPosition = window.scrollY + 300;
 
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id') || '';
+        const sectionId = section.getAttribute("id") || "";
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
           setActiveSection(sectionId);
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md shadow-md py-3' : 'py-5'}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md shadow-md py-3"
+          : "py-5"
+      }`}
+    >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <img src={Symbol} alt="Symbol" height={50} width={50}/>
-        <a href="#home" className="mr-32 text-2xl font-bold text-primary">
-          Ankit<span className="text-foreground"> Tiwari</span>
-        </a>
+        {/* Logo & Brand */}
+        <div className="flex items-center space-x-3">
+          <img src={Symbol} alt="Logo" height={40} width={40} />
+          <a href="#home" className="text-2xl font-bold text-primary">
+            Ankit<span className="text-foreground"> Tiwari</span>
+          </a>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-6">
-          {navLinks.map(link => (
+          {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
@@ -68,8 +78,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               }}
               className={`relative font-medium transition-colors duration-200 ${
                 activeSection === link.id
-                  ? 'text-primary'
-                  : 'text-muted hover:text-primary'
+                  ? "text-primary"
+                  : "text-muted hover:text-primary"
               }`}
             >
               {link.label}
@@ -80,8 +90,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           ))}
         </nav>
 
+        {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-4">
-          <a 
+          <a
             href={resume}
             download
             className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-md transition hover:bg-primary hover:text-white border-primary text-primary dark:text-white dark:hover:bg-white dark:hover:text-black"
@@ -92,19 +103,27 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           <ThemeToggle />
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center space-x-3">
           <ThemeToggle />
-          <button onClick={toggleMenu} className="text-foreground" aria-label="Toggle menu">
+          <button
+            onClick={toggleMenu}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      <div className={`md:hidden fixed inset-0 z-40 bg-background transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed inset-0 z-40 bg-background transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
         <div className="flex flex-col h-full pt-20 px-6">
-          {navLinks.map(link => (
+          {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
@@ -117,7 +136,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               {link.label}
             </a>
           ))}
-          <a 
+
+          <a
             href={resume}
             download
             onClick={closeMenu}
