@@ -151,8 +151,8 @@ const Contact: React.FC = () => {
                 title="Social Media"
                 content={
                   <div className="flex space-x-4 mt-2">
-                    <a href="https://github.com/Ankit2004tiwari" target="_blank" className="text-muted hover:text-primary">GitHub</a>
-                    <a href="https://www.linkedin.com/in/ankit-tiwari-a90881217/" target="_blank" className="text-muted hover:text-primary">LinkedIn</a>
+                    <a href="https://github.com/ankit-tiwari-dev" target="_blank" className="text-muted hover:text-primary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ankit-tiwari-at23/" target="_blank" className="text-muted hover:text-primary">LinkedIn</a>
                   </div>
                 }
               />

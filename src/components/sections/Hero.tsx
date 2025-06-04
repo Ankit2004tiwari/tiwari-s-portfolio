@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             
             <div className="flex items-center space-x-6">
               <a 
-                href="https://github.com/Ankit2004tiwari" 
+                href="https://github.com/ankit-tiwari-dev" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted hover:text-primary transition-colors duration-300"
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                 <Github size={24} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/ankit-tiwari-a90881217/" 
+                href="https://www.linkedin.com/in/ankit-tiwari-at-23/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted hover:text-primary transition-colors duration-300"
