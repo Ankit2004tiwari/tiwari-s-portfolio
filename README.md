@@ -71,5 +71,5 @@ npm run dev
 
 ## 🔗 Connect with Me
 
-* 🌐 Portfolio: [ankittiwari.dev](https://vercel.com/ankit2004tiwaris-projects/tiwari-s-portfolio-at23)
+* 🌐 Portfolio: [ankittiwari.dev](https:\\tiwari-s-portfolio-at23.vercel.app)
 * 💼 LinkedIn: [linkedin.com/in/ankit-tiwari-at23](https://www.linkedin.com/in/ankit-tiwari-a90881217/)
