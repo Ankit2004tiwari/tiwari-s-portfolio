@@ -68,22 +68,6 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── Contact.tsx
-│   └── ThemeToggle.tsx
-├── context/
-│   └── ThemeContext.tsx
-├── assets/
-├── styles/
-├── App.tsx
-└── main.tsx
-```
 
 ## 🔗 Connect with Me
 
