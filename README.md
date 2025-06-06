@@ -32,7 +32,7 @@ Hi there! 👋 I'm Ankit Tiwari, a passionate and dedicated software engineer wi
 - **Icons**: Lucide React
 - **Forms & Email**: EmailJS, React Hook Form (optional)
 - **Build Tool**: Vite
-- **Deploy**: GitHub Pages / Vercel / Netlify
+- **Deploy**: GitHub Pages / Vercel
 
 ---
 
@@ -41,7 +41,7 @@ Hi there! 👋 I'm Ankit Tiwari, a passionate and dedicated software engineer wi
 Clone the repo:
 
 ```bash
-git clone https://github.com/ankittiwari-dev/my-portfolio.git
+git clone https://github.com/ankit-tiwari-dev/ankitdev-portfolio.git
 cd my-portfolio
 ````
 
@@ -68,22 +68,6 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── Contact.tsx
-│   └── ThemeToggle.tsx
-├── context/
-│   └── ThemeContext.tsx
-├── assets/
-├── styles/
-├── App.tsx
-└── main.tsx
-```
 
 ## 🔗 Connect with Me
 
