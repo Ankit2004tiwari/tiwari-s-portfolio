@@ -42,7 +42,7 @@ Clone the repo:
 
 ```bash
 git clone https://github.com/ankit-tiwari-dev/ankitdev-portfolio.git
-cd my-portfolio
+cd ankitdev-portfolio
 ````
 
 Install dependencies:
